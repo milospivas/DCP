@@ -1,2 +1,2 @@
 # DCP
-Algorithmic problem-solving exercises from Daily Coding Problem.
+Algorithmic problem-solving exercises. Most of them from Daily Coding Problem.
