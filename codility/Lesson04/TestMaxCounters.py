@@ -22,7 +22,7 @@ def test_Solution_Node_init():
     return init_passed
 
 
-### Testing Solution.Counters #########################################################################
+### Testing Solution.Counters #####################################################################
 
 def test_Solution_Counters_init():
     '''
@@ -46,7 +46,9 @@ def test_Solution_Counters_increment_at_start():
     i, time = 1, 1
     C.increment(i, time)
 
-    increment_passed = (N, 1, time, 0, 0, 1) == (C.N, C.counter[i].val, C.counter[i].time, C.min_time, C.min, C.max)
+    true_sol = (N, 1, time, 0, 0, 1)
+    sol = (C.N, C.counter[i].val, C.counter[i].time, C.min_time, C.min, C.max)
+    increment_passed = true_sol == sol
     return increment_passed
 
 def test_Solution_Counters_set_min_to_max_after_increment():
@@ -147,7 +149,7 @@ def test_Solution_Counters_get_all_counters_after_inc_set_inc_set():
     return get_all_counters_passed
 
 
-### Testing Solution.solution #########################################################################
+### Testing Solution.solution #####################################################################
 
 def test_Solution_solution_no_containers():
     '''
@@ -219,7 +221,7 @@ def test_Solution_solution_increment_set_increment_set_increment():
     return solution_passed
 
 
-### Testing solution() #########################################################################
+### Testing solution() ############################################################################
 
 def test_solution_no_containers():
     '''
@@ -290,27 +292,31 @@ def test_solution_increment_set_increment_set_increment():
     solution_passed = true_sol == sol
     return solution_passed
 
-test_functions =    [   test_Solution_Node_init,
-                        test_Solution_Counters_init,
-                        test_Solution_Counters_increment_at_start,
-                        test_Solution_Counters_set_min_to_max_after_increment,
-                        test_Solution_Counters_get_all_counters,
-                        test_Solution_Counters_get_all_counters_after_increment,
-                        test_Solution_Counters_get_all_counters_after_increment_and_set_min_to_max,
-                        test_Solution_Counters_get_all_counters_after_inc_set_inc_set,
-                        test_Solution_solution_no_containers,
-                        test_Solution_solution_no_operations,
-                        test_Solution_solution_single_increment,
-                        test_Solution_solution_increment_and_set,
-                        test_Solution_solution_increment_set_increment,
-                        test_solution_increment_set_increment_set_increment,
-                        test_solution_no_containers,
-                        test_solution_no_operations,
-                        test_solution_single_increment,
-                        test_solution_increment_and_set,
-                        test_solution_increment_set_increment,
-                        test_solution_increment_set_increment_set_increment
-                    ]
+
+### Running tests #################################################################################
+
+test_functions = [ 
+    test_Solution_Node_init,
+    test_Solution_Counters_init,
+    test_Solution_Counters_increment_at_start,
+    test_Solution_Counters_set_min_to_max_after_increment,
+    test_Solution_Counters_get_all_counters,
+    test_Solution_Counters_get_all_counters_after_increment,
+    test_Solution_Counters_get_all_counters_after_increment_and_set_min_to_max,
+    test_Solution_Counters_get_all_counters_after_inc_set_inc_set,
+    test_Solution_solution_no_containers,
+    test_Solution_solution_no_operations,
+    test_Solution_solution_single_increment,
+    test_Solution_solution_increment_and_set,
+    test_Solution_solution_increment_set_increment,
+    test_solution_increment_set_increment_set_increment,
+    test_solution_no_containers,
+    test_solution_no_operations,
+    test_solution_single_increment,
+    test_solution_increment_and_set,
+    test_solution_increment_set_increment,
+    test_solution_increment_set_increment_set_increment
+]
 
 for test_func in test_functions:
     print('Runing: ', test_func.__name__)
