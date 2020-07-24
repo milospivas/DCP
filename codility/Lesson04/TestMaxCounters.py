@@ -1,3 +1,9 @@
+'''
+    Unit testing module for MaxCounters.py
+
+    Author: Miloš Pivaš, student
+'''
+
 from MaxCounters import Solution
 from MaxCounters import solution
 
@@ -284,7 +290,7 @@ def test_solution_increment_set_increment_set_increment():
     solution_passed = true_sol == sol
     return solution_passed
 
-test_functions =    [  test_Solution_Node_init,
+test_functions =    [   test_Solution_Node_init,
                         test_Solution_Counters_init,
                         test_Solution_Counters_increment_at_start,
                         test_Solution_Counters_set_min_to_max_after_increment,

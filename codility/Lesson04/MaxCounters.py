@@ -1,6 +1,8 @@
-# write your code in Python 3.6
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
+'''
+    Solution for Codility Lesson04, MaxCounters problem.
+
+    Author: Miloš Pivaš, student
+'''
 
 class Solution:
 
